@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
+import { StatisticsComponent } from './admin/statistics/statistics.component';
+import { ActiveuserGuard } from './authentication/activeuser.guard';
+import { AuthorizationGuard } from './authentication/authorization.guard';
 import { CheckoutComponent } from './shop/checkout/checkout.component';
 import { LoginComponent } from './shop/login/login.component';
 import { SearchComponent } from './shop/search/search.component';
@@ -17,13 +20,18 @@ const routes: Routes = [{
 },
 {
   path:'checkout',
-  component:CheckoutComponent
+  component:CheckoutComponent,
+  canActivate: [ActiveuserGuard]
 },{
   path:'login',
   component:LoginComponent
 },{
   path:'adminlogin',
   component:AdminLoginComponent
+},{
+  path:'statistics',
+  component:StatisticsComponent,
+  canActivate:[AuthorizationGuard]
 }
 
 ];

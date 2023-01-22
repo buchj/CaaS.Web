@@ -1,0 +1,52 @@
+<h1 class="ui header">Statistics</h1>
+<div style="margin-left: 20%;margin-right: 20%; margin-top: 10%;">
+<div class="ui statistics center aligned">
+    <div class="statistic">
+      <div class="value">
+        <i class="shopping cart icon"></i>
+        {{openCarts}}
+      </div>
+      <div class="cart label">
+        Open Carts
+      </div>
+    </div>
+    <div class="statistic">
+      <div class="value">
+        <i class="suitcase icon"></i>
+        {{closedCarts}}
+      </div>
+      <div class="label">
+        Closed Carts
+      </div>
+    </div>
+    <div class="statistic">
+      <div class="value">
+        <i class="tag icon"></i> {{usedCoupons}}
+      </div>
+      <div class="label">
+        
+        Used Coupons
+      </div>
+    </div>
+    
+  </div>
+  <br>
+  <div class="ui statistics center aligned">
+  <div class="statistic">
+    <div class="value">
+        <i class="money bill alternate icon"></i>
+      {{averageOrderValue}}€
+    </div>
+    <div class="label">
+      Average order value between 
+        <div class="ui input">
+            <input type="date" [(ngModel)]="start" (change)="onTimeSpanChanged()">
+        </div> 
+        and 
+        <div class="ui input">
+            <input type="date" [(ngModel)]="end" (change)="onTimeSpanChanged()">
+        </div>
+    </div>
+  </div>
+  </div>
+</div>

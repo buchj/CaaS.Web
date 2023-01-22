@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './shop/search/search.component';
@@ -11,6 +11,8 @@ import { CheckoutComponent } from './shop/checkout/checkout.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './shop/login/login.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
+import { AuthorizationInterceptor } from './authentication/authorization.interceptor';
+import { StatisticsComponent } from './admin/statistics/statistics.component';
 
 
 
@@ -23,6 +25,7 @@ import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
     CheckoutComponent,
     LoginComponent,
     AdminLoginComponent,
+    StatisticsComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,7 @@ import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
     NgbModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthorizationInterceptor, multi: true },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
