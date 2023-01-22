@@ -11,7 +11,7 @@ import { CheckoutComponent } from './shop/checkout/checkout.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './shop/login/login.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
-import { AuthorizationInterceptor } from './authentication/authorization.interceptor';
+import { AuthorizationInterceptor } from './shared/authentication/authorization.interceptor';
 import { StatisticsComponent } from './admin/statistics/statistics.component';
 
 

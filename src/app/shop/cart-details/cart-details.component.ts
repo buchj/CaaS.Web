@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Cart } from 'src/app/shared/models/cart';
 import { ProductDTO } from 'src/app/shared/models/product-dto';
 import { ProductCart } from 'src/app/shared/models/productcart';
-import { ProductService } from 'src/app/shared/product.service';
+import { ProductService } from 'src/app/shared/services/product.service';
 import { CartService } from 'src/app/shared/services/cart.service';
 
 @Component({

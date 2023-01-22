@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ProductDTO } from './models/product-dto';
+import { ProductDTO } from '../models/product-dto';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { catchError, map, Observable, of } from 'rxjs';

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
 import { debounceTime, distinctUntilChanged, switchMap, tap } from 'rxjs';
 import { ProductDTO } from 'src/app/shared/models/product-dto';
-import { ProductService } from 'src/app/shared/product.service';
+import { ProductService } from 'src/app/shared/services/product.service';
 import { ProductListItemComponent } from '../product-list-item/product-list-item.component';
 
 

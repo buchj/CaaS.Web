@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Console } from 'console';
 import { ProductDTO } from 'src/app/shared/models/product-dto';
-import { ProductService } from 'src/app/shared/product.service';
+import { ProductService } from 'src/app/shared/services/product.service';
 import { CartService } from 'src/app/shared/services/cart.service';
 
 

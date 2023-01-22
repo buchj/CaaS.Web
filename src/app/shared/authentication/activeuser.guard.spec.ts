@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ActiveuserGuard } from './activeuser.guard';
+import { ActiveuserGuard } from '../services/activeuser.guard';
 
 describe('ActiveuserGuard', () => {
   let guard: ActiveuserGuard;
