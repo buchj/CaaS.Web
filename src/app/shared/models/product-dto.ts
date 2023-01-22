@@ -3,8 +3,8 @@ import * as internal from "stream";
 export class ProductDTO {
     constructor(
 
-        public id?: Number,
-        public shopId?: Number,
+        public id?: number,
+        public shopId?: number,
         public name?:string,
         public description?:string,
         public downloadurl?:string,

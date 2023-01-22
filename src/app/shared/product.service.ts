@@ -10,7 +10,7 @@ import { catchError, map, Observable, of } from 'rxjs';
 })
 export class ProductService {
 
-  produtcs: ProductDTO[] = [];
+  products: ProductDTO[] = [];
   constructor(private http:HttpClient) { }
 
   private errorHandler(error: Error | any): Observable<any> {
@@ -20,6 +20,11 @@ export class ProductService {
 
   getAll(shopId:number): Observable<ProductDTO[]>{
     return this.http.get<ProductDTO[]>(`${environment.server}/shops/${shopId}/products`)
+    .pipe(catchError(this.errorHandler));
+  }
+
+  searchSimple(shopId:number,search:string): Observable<ProductDTO[]>{
+    return this.http.post<ProductDTO[]>(`${environment.server}/shops/${shopId}/products/search/${search}`,null)
     .pipe(catchError(this.errorHandler));
   }
 }

@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Console } from 'console';
 import { ProductDTO } from 'src/app/shared/models/product-dto';
+import { ProductService } from 'src/app/shared/product.service';
+import { CartService } from 'src/app/shared/services/cart.service';
 
 
 @Component({
@@ -10,7 +13,14 @@ import { ProductDTO } from 'src/app/shared/models/product-dto';
 export class ProductListItemComponent implements OnInit {
 
   @Input() product: ProductDTO = new ProductDTO();
-  constructor() { }
+
+  @Input() showBuyButton: boolean = false;
+  constructor(private cs:CartService) { }
+
+  addProductToCart(id:number){
+    console.log(id);
+    this.cs.addOrder(id,1).subscribe(res=>console.log(res));
+  }
 
   ngOnInit(): void {
   }

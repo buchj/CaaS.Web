@@ -1,6 +1,7 @@
-<div class="content">
-    Product List item
-    <div class="header">{{ product.name }}</div>
+<div class="content" style="margin-bottom: 1.4em;">
+    <div class="header" style="margin-bottom: 0.3em;">{{ product.name }}</div>
     <div class="description"> {{ product.description }} </div>
-    <div class="extra">Price: {{ product.price }}</div>
+    <a *ngIf="showBuyButton" style="margin-top: 0.6em;" class="ui tiny red tag label" (click)="addProductToCart(product.id?product.id:-1)">Jetzt für {{ product.price }}€ kaufen!</a>
+    <div *ngIf="!showBuyButton" style="margin-top: 0.6em;" class="ui tiny red tag label">{{ product.price }}€</div>
+
 </div>

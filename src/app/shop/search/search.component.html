@@ -1,6 +1,14 @@
-<p>search works!</p>
-<div >
-<app-product-list-item *ngFor="let p of products" [product]="p"> 
+<div class="ui search"  [ngClass]="{ loading: isLoading }">
+	<div class="ui icon input">
+	  <input (keyup)="keyup.emit(searchTerm.value)" 
+	  	#searchTerm class="prompt" type="text" placeholder="Suche...">
+	  <i class="search icon"></i>
+	</div>
+	
+</div>
 
-</app-product-list-item>
+<div class="ui middle aligned divided list">
+    <div class="item">
+        <app-product-list-item *ngFor="let p of foundProducts" [product]="p" class="item" [showBuyButton]="true"></app-product-list-item>
+    </div>
 </div>
