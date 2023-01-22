@@ -27,4 +27,11 @@ export class ProductService {
     return this.http.post<ProductDTO[]>(`${environment.server}/shops/${shopId}/products/search/${search}`,null)
     .pipe(catchError(this.errorHandler));
   }
+
+  getById(productId:number): Observable<ProductDTO>{
+    return this.http.get<ProductDTO>(`${environment.server}/products/${productId}`)
+    .pipe(catchError(this.errorHandler));
+  }
+
+  
 }

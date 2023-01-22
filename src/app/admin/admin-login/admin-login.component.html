@@ -1,0 +1,19 @@
+<form class="ui  form" style="margin-left: 20%;margin-right: 20%;">
+    <div class="ui stacked segment">
+      <div class="field">
+        <div class="ui left icon input">
+          <i class="user icon"></i>
+          <input type="text" name="identity" placeholder="Identity" [(ngModel)]="identity">
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui left icon input">
+          <i class="lock icon"></i>
+          <input type="password" name="appkey" [(ngModel)]="appkey" placeholder="App-Key">
+        </div>
+      </div> 
+      <div class="ui fluid  teal submit button" (click)="login()">Login</div>
+    </div>
+
+    
+    </form>

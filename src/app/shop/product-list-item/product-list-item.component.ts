@@ -19,7 +19,7 @@ export class ProductListItemComponent implements OnInit {
 
   addProductToCart(id:number){
     console.log(id);
-    this.cs.addOrder(id,1).subscribe(res=>console.log(res));
+    this.cs.addProductToActiveCart(id,1).subscribe(res=>console.log(res));
   }
 
   ngOnInit(): void {

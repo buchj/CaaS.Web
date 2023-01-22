@@ -1,7 +1,7 @@
 export class ProductCart {
     constructor(
-        productId?:number,
-        cartId?:number,
-        amount?:number
+        public productId?:number,
+        public cartId?:number,
+        public amount?:number
     ){}
 }

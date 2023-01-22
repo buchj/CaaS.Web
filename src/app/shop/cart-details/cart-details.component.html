@@ -1,1 +1,24 @@
-<p>cart-details works!</p>
+<br>
+<table class="ui celled table">
+    <thead><tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Amount</th>
+    </tr></thead>
+    <tbody>
+      <tr *ngFor="let pc of productCarts">
+        <td data-label="Name">{{pc.productId && products[pc.productId] ? products[pc.productId].name : ""}}</td>
+        <td data-label="Price">{{pc.productId  && products[pc.productId]? products[pc.productId!].price : ""}}€</td>
+        <td data-label="Amount">{{pc.amount}}</td>
+      </tr>
+      <tr class="bold" >
+        <td data-label="Name"><strong>{{productCarts.length}} different products</strong></td>
+        <td data-label="Price"><strong>{{rawTotal}}€</strong> </td>
+        <td data-label="Total Amount"><strong>{{totalItemCount}}</strong> </td>
+      </tr>
+    </tbody>
+  </table>
+
+  
+
+<br>

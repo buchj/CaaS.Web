@@ -1,1 +1,37 @@
-<p>checkout works!</p>
+
+<div class="ui labeled input">
+    <div class="ui label">Cart: </div>
+    <select class="ui selection dropdown" >
+      <option value="none" selected disabled hidden>Select an Option</option>
+      <option *ngFor="let c of carts" [value]="c.id" (click)="changeActiveCart(c.id!)">{{c.id}}</option>
+    </select>
+</div>
+
+<app-cart-details></app-cart-details>
+
+<div class="ui right action input">
+    <form (submit)="attemptCheckout()">
+    
+    <input type="text" name="credit" [(ngModel)]="creditCard" placeholder="Your credit card number" required pattern="[0-9]{16}">
+    <button type="submit" class="ui teal labeled icon button" >
+        <i class="cart icon"></i>
+        Checkout
+    </button>
+    </form>
+  </div>
+
+  <div class="ui message success" *ngIf="orderSuccessState==1">
+    <div class="header">
+      <label >{{orderResultText}}</label>
+    </div>
+    <p></p>
+  </div>
+
+  
+
+  <div class="ui message error" *ngIf="orderSuccessState==-1" >
+    <div class="header">
+      <label>An error has occured, your request has not been processed</label>
+    </div>
+    <p></p>
+  </div>
